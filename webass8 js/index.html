@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Register and Login Form</title>
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+
+
+  <body>
+    <div class="form">
+      <form class="register-form" onsubmit="return Validate()">
+        <input class="username" type="text" placeholder="Username" required maxlength="45">
+
+        <input class= "password" type="password" name= "password" placeholder="Password" id="txtPassword" required maxlength="45">
+
+        <input class= "password2" type="password" name="password2" placeholder="Confirm password" id="txtConfirmPassword" required maxlength="45">
+        <input type="submit" class="button" onclick="return Validate()" value="Register">
+      </form>
+
+      <script type="text/javascript">
+      function Validate() {
+        var password = document.getElementById("txtPassword").value;
+        var confirmPassword = document.getElementById("txtConfirmPassword").value;
+        if (!password || !confirmPassword)
+        {
+          alert("Entry values to 'password' sections.");
+          return false;
+        }
+        if(password != confirmPassword)
+        {
+          alert("Passwords do not match, try one more time.");
+          return false;
+        }
+        alert("Registration submitted successfully!")
+        return true;
+        }
+      </script>
+
+    </div>
+  </body>
+</html>
